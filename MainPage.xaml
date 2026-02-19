@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartTask.MainPage"
+             xmlns:models="clr-namespace:SmartTaskClassLibrary.Models;assembly=SmartTaskClassLibrary"
+             xmlns:vm="clr-namespace:SmartTaskClassLibrary.ViewModels;assembly=SmartTaskClassLibrary"
+             x:Name="PageRoot"
+             BackgroundColor="#FFF7F9"
+             x:DataType="vm:MainViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,30,20,30" Spacing="20">
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="2">
+                <Label Text="SmartTask"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#1F2937" />
+                <Label Text="Simple. Scalable. Productive."
+                       FontSize="12"
+                       TextColor="#6B7280" />
+            </VerticalStackLayout>
+            
+            <!-- Task Input Section -->
+            <Border Padding="16" BackgroundColor="White" StrokeShape="RoundRectangle 12">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Add New Task"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#111827" />
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Task Name" FontSize="13" TextColor="#374151" />
+                        <Entry Placeholder="Enter task name" Text="{Binding NewTaskName}" BackgroundColor="#F3F4F6" HeightRequest="44" TextColor="Black"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Task Description" FontSize="13" TextColor="#374151" />
+                        <Entry Placeholder="Enter task description" Text="{Binding NewTaskDescription}" BackgroundColor="#F3F4F6" HeightRequest="44" TextColor="Black"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Category" FontSize="13" TextColor="#374151" />
+                        <Picker ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" BackgroundColor="#F3F4F6" HeightRequest="44" TextColor="Black"/>
+                    </VerticalStackLayout>
+
+                    <Button Text="Add Task" Command="{Binding AddTaskCommand}" BackgroundColor="#111827" TextColor="White" CornerRadius="8" HeightRequest="44"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Filters -->
+            <VerticalStackLayout Spacing="10">
+
+                <!-- Status Filter -->
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="All" Command="{Binding SetStatusFilterCommand}" CommandParameter="All"
+                BackgroundColor="Transparent" TextColor="#111827">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterStatus}" Value="All">
+                                <Setter Property="BackgroundColor" Value="#111827"/>
+                                <Setter Property="TextColor" Value="White"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Text="Pending" Command="{Binding SetStatusFilterCommand}" CommandParameter="Pending"
+                BackgroundColor="Transparent" TextColor="#111827">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterStatus}" Value="Pending">
+                                <Setter Property="BackgroundColor" Value="#111827"/>
+                                <Setter Property="TextColor" Value="White"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button Text="Completed" Command="{Binding SetStatusFilterCommand}" CommandParameter="Completed"
+                BackgroundColor="Transparent" TextColor="#111827">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterStatus}" Value="Completed">
+                                <Setter Property="BackgroundColor" Value="#111827"/>
+                                <Setter Property="TextColor" Value="White"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </HorizontalStackLayout>
+
+                <!-- Category Filter -->
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="All" Command="{Binding SetCategoryFilterCommand}" CommandParameter="All"
+                    BackgroundColor="Transparent" TextColor="#111827">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="All">
+                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="TextColor" Value="White"/>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Button Text="Work" Command="{Binding SetCategoryFilterCommand}" CommandParameter="Work"
+                    BackgroundColor="Transparent" TextColor="#111827">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="Work">
+                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="TextColor" Value="White"/>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Button Text="School" Command="{Binding SetCategoryFilterCommand}" CommandParameter="School"
+                    BackgroundColor="Transparent" TextColor="#111827">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="School">
+                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="TextColor" Value="White"/>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Button Text="Personal" Command="{Binding SetCategoryFilterCommand}" CommandParameter="Personal"
+                    BackgroundColor="Transparent" TextColor="#111827">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="Personal">
+                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="TextColor" Value="White"/>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+            <!-- Task List -->
+            <CollectionView ItemsSource="{Binding Tasks}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:SmartTaskModel">
+                        <Border Padding="12" Margin="0,0,0,8" BackgroundColor="White" StrokeShape="RoundRectangle 4">
+                            <VerticalStackLayout Spacing="8">
+
+                                <!-- Task Info -->
+                                <Label Text="{Binding TaskName}" FontAttributes="Bold" FontSize="16" TextColor="#6B7280"/>
+                                <Label Text="{Binding TaskDescription}" FontSize="13" TextColor="#6B7280"/>
+                                <Label Text="{Binding Category}" FontSize="12" TextColor="#6B7280"/>
+                                <Label Text="{Binding Status}" FontSize="12" TextColor="#6B7280"/>
+
+                                <!-- Actions -->
+                                <VerticalStackLayout Spacing="6">
+                                    <!-- Windows: buttons inside card -->
+                                    <HorizontalStackLayout Spacing="10" IsVisible="{OnPlatform WinUI=true, iOS=false, Android=false}">
+                                        <Button Text="Complete"
+                                                BackgroundColor="#16A34A"
+                                                TextColor="White"
+                                                Command="{Binding BindingContext.CompleteTaskCommand, Source={x:Reference PageRoot}}"
+                                                CommandParameter="{Binding .}"/>
+                                        <Button Text="Delete"
+                                                BackgroundColor="#DC2626"
+                                                TextColor="White"
+                                                Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference PageRoot}}"
+                                                CommandParameter="{Binding .}"/>
+                                    </HorizontalStackLayout>
+
+                                    <!-- Mobile: SwipeView -->
+                                    <SwipeView IsVisible="{OnPlatform WinUI=false}">
+                                        <SwipeView.LeftItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Complete" BackgroundColor="#16A34A"
+                                                           Command="{Binding BindingContext.CompleteTaskCommand, Source={x:Reference PageRoot}}"
+                                                           CommandParameter="{Binding .}" />
+                                            </SwipeItems>
+                                        </SwipeView.LeftItems>
+
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Delete" BackgroundColor="#DC2626"
+                                                           Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference PageRoot}}"
+                                                           CommandParameter="{Binding .}" />
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+
+                                        <Border StrokeShape="RoundRectangle 8" Padding="0" BackgroundColor="Transparent">
+                                            <!-- Empty; task info is above -->
+                                        </Border>
+                                    </SwipeView>
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

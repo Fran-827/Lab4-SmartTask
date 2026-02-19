@@ -1,0 +1,86 @@
+[
+  {
+    "TaskName": "Workout",
+    "TaskDescription": "Morning cardio and strength training.",
+    "Category": "Personal",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Design landing page",
+    "TaskDescription": "Create layout and visual assets for new product landing.",
+    "Category": "Work",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Grocery shopping",
+    "TaskDescription": "Buy ingredients for meals this week.",
+    "Category": "Personal",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Read Design Patterns",
+    "TaskDescription": "Finish chapters 3 and 4.",
+    "Category": "School",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Team meeting",
+    "TaskDescription": "Discuss project milestones and deadlines.",
+    "Category": "Work",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Math homework",
+    "TaskDescription": "Complete exercises 5-10 in chapter 6.",
+    "Category": "School",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Clean the house",
+    "TaskDescription": "Vacuum living room and dust shelves.",
+    "Category": "Personal",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Prepare presentation",
+    "TaskDescription": "Finalize slides for next week\u0027s client meeting.",
+    "Category": "Work",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Test Save and Load",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": null
+  },
+  {
+    "TaskName": "Test Task add",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Test Save and Load",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": null
+  },
+  {
+    "TaskName": "Test Task add",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Test Save and Load",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": null
+  },
+  {
+    "TaskName": "Test Task add",
+    "TaskDescription": "This is a test task.",
+    "Category": "Work",
+    "Status": "Pending"
+  }
+]
