@@ -1,0 +1,12 @@
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\bin\Debug\net8.0\SmartTaskClassLibrary.deps.json
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\bin\Debug\net8.0\SmartTaskClassLibrary.dll
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\bin\Debug\net8.0\SmartTaskClassLibrary.pdb
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.csproj.AssemblyReference.cache
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.AssemblyInfoInputs.cache
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.AssemblyInfo.cs
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.csproj.CoreCompileInputs.cache
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.dll
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\refint\SmartTaskClassLibrary.dll
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\SmartTaskClassLibrary.pdb
+D:\2TS2526\CPE106L\Lab4\SmartTaskClassLibrary\obj\Debug\net8.0\ref\SmartTaskClassLibrary.dll
