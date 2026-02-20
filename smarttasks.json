@@ -1,86 +1,112 @@
 [
   {
-    "TaskName": "Workout",
-    "TaskDescription": "Morning cardio and strength training.",
-    "Category": "Personal",
-    "Status": "Completed"
-  },
-  {
-    "TaskName": "Design landing page",
-    "TaskDescription": "Create layout and visual assets for new product landing.",
-    "Category": "Work",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Grocery shopping",
-    "TaskDescription": "Buy ingredients for meals this week.",
-    "Category": "Personal",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Read Design Patterns",
-    "TaskDescription": "Finish chapters 3 and 4.",
-    "Category": "School",
-    "Status": "Completed"
-  },
-  {
-    "TaskName": "Team meeting",
-    "TaskDescription": "Discuss project milestones and deadlines.",
-    "Category": "Work",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Math homework",
-    "TaskDescription": "Complete exercises 5-10 in chapter 6.",
-    "Category": "School",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Clean the house",
-    "TaskDescription": "Vacuum living room and dust shelves.",
-    "Category": "Personal",
-    "Status": "Completed"
-  },
-  {
     "TaskName": "Prepare presentation",
     "TaskDescription": "Finalize slides for next week\u0027s client meeting.",
     "Category": "Work",
+    "IsCompleted": true,
+    "IsNotCompleted": false,
+    "StatusColor": "Green",
+    "categoryColor": "Blue",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Exam",
+    "TaskDescription": "Calculus 1 Exam",
+    "Category": "School",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Purple",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Finish Data Structures Assignment",
+    "TaskDescription": "Implement linked list and stack operations",
+    "Category": "School",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Purple",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Buy Groceries",
+    "TaskDescription": "Milk, Eggs, Bread, Rice",
+    "Category": "Personal",
+    "IsCompleted": true,
+    "IsNotCompleted": false,
+    "StatusColor": "Green",
+    "categoryColor": "Teal",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Prepare Lab Report",
+    "TaskDescription": "Document results for Embedded Systems experiment",
+    "Category": "School",
+    "IsCompleted": true,
+    "IsNotCompleted": false,
+    "StatusColor": "Green",
+    "categoryColor": "Purple",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Clean Study Area",
+    "TaskDescription": "Organize desk and remove unnecessary papers",
+    "Category": "Personal",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Teal",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Review Networking Notes",
+    "TaskDescription": "Study subnetting and IP addressing",
+    "Category": "School",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Purple",
+    "Status": "Pending"
+  },
+  {
+    "TaskName": "Call Groupmates",
+    "TaskDescription": "Discuss project system architecture",
+    "Category": "School",
+    "IsCompleted": true,
+    "IsNotCompleted": false,
+    "StatusColor": "Green",
+    "categoryColor": "Purple",
+    "Status": "Completed"
+  },
+  {
+    "TaskName": "Finish video",
+    "TaskDescription": "Finish video editing for Lab 4",
+    "Category": "School",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Purple",
     "Status": "Pending"
   },
   {
     "TaskName": "Test Save and Load",
     "TaskDescription": "This is a test task.",
     "Category": "Work",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Blue",
     "Status": null
   },
   {
     "TaskName": "Test Task add",
     "TaskDescription": "This is a test task.",
     "Category": "Work",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Test Save and Load",
-    "TaskDescription": "This is a test task.",
-    "Category": "Work",
-    "Status": null
-  },
-  {
-    "TaskName": "Test Task add",
-    "TaskDescription": "This is a test task.",
-    "Category": "Work",
-    "Status": "Pending"
-  },
-  {
-    "TaskName": "Test Save and Load",
-    "TaskDescription": "This is a test task.",
-    "Category": "Work",
-    "Status": null
-  },
-  {
-    "TaskName": "Test Task add",
-    "TaskDescription": "This is a test task.",
-    "Category": "Work",
+    "IsCompleted": false,
+    "IsNotCompleted": true,
+    "StatusColor": "Orange",
+    "categoryColor": "Blue",
     "Status": "Pending"
   }
 ]

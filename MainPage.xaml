@@ -43,7 +43,15 @@
 
                     <VerticalStackLayout Spacing="4">
                         <Label Text="Category" FontSize="13" TextColor="#374151" />
-                        <Picker ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" BackgroundColor="#F3F4F6" HeightRequest="44" TextColor="Black"/>
+                        <Picker BackgroundColor="#F3F4F6" HeightRequest="44" TextColor="Black" SelectedItem="{Binding SelectedCategory}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Work</x:String>
+                                    <x:String>School</x:String>
+                                    <x:String>Personal</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </VerticalStackLayout>
 
                     <Button Text="Add Task" Command="{Binding AddTaskCommand}" BackgroundColor="#111827" TextColor="White" CornerRadius="8" HeightRequest="44"/>
@@ -68,7 +76,7 @@
                 BackgroundColor="Transparent" TextColor="#111827">
                         <Button.Triggers>
                             <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterStatus}" Value="Pending">
-                                <Setter Property="BackgroundColor" Value="#111827"/>
+                                <Setter Property="BackgroundColor" Value="Orange"/>
                                 <Setter Property="TextColor" Value="White"/>
                             </DataTrigger>
                         </Button.Triggers>
@@ -77,7 +85,7 @@
                 BackgroundColor="Transparent" TextColor="#111827">
                         <Button.Triggers>
                             <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterStatus}" Value="Completed">
-                                <Setter Property="BackgroundColor" Value="#111827"/>
+                                <Setter Property="BackgroundColor" Value="Green"/>
                                 <Setter Property="TextColor" Value="White"/>
                             </DataTrigger>
                         </Button.Triggers>
@@ -100,7 +108,7 @@
                     BackgroundColor="Transparent" TextColor="#111827">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="Work">
-                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="BackgroundColor" Value="Blue" />
                                     <Setter Property="TextColor" Value="White"/>
                                 </DataTrigger>
                             </Button.Triggers>
@@ -109,7 +117,7 @@
                     BackgroundColor="Transparent" TextColor="#111827">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="School">
-                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="BackgroundColor" Value="Purple"/>
                                     <Setter Property="TextColor" Value="White"/>
                                 </DataTrigger>
                             </Button.Triggers>
@@ -118,7 +126,7 @@
                     BackgroundColor="Transparent" TextColor="#111827">
                             <Button.Triggers>
                                 <DataTrigger TargetType="Button" Binding="{Binding SelectedFilterCategory}" Value="Personal">
-                                    <Setter Property="BackgroundColor" Value="#111827"/>
+                                    <Setter Property="BackgroundColor" Value="Teal"/>
                                     <Setter Property="TextColor" Value="White"/>
                                 </DataTrigger>
                             </Button.Triggers>
@@ -131,14 +139,14 @@
             <CollectionView ItemsSource="{Binding Tasks}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:SmartTaskModel">
-                        <Border Padding="12" Margin="0,0,0,8" BackgroundColor="White" StrokeShape="RoundRectangle 4">
+                        <Border Padding="12,12,12,12" Margin="0,0,0,8" BackgroundColor="White" StrokeShape="RoundRectangle 4">
                             <VerticalStackLayout Spacing="8">
 
                                 <!-- Task Info -->
-                                <Label Text="{Binding TaskName}" FontAttributes="Bold" FontSize="16" TextColor="#6B7280"/>
-                                <Label Text="{Binding TaskDescription}" FontSize="13" TextColor="#6B7280"/>
-                                <Label Text="{Binding Category}" FontSize="12" TextColor="#6B7280"/>
-                                <Label Text="{Binding Status}" FontSize="12" TextColor="#6B7280"/>
+                                <Label Text="{Binding Category}" FontSize="16" TextColor="{Binding categoryColor}" />
+                                <Label Text="{Binding TaskName}" FontAttributes="Bold" FontSize="24" TextColor="Black"/>
+                                <Label Text="{Binding TaskDescription}" FontAttributes="Italic" FontSize="13" TextColor="#6B7280"/>
+                                <Label Text="{Binding Status}" FontAttributes="Bold" FontSize="16" TextColor="{Binding StatusColor}" TextTransform="Uppercase"/>
 
                                 <!-- Actions -->
                                 <VerticalStackLayout Spacing="6">
@@ -148,36 +156,14 @@
                                                 BackgroundColor="#16A34A"
                                                 TextColor="White"
                                                 Command="{Binding BindingContext.CompleteTaskCommand, Source={x:Reference PageRoot}}"
-                                                CommandParameter="{Binding .}"/>
+                                                CommandParameter="{Binding .}"
+                                                IsVisible="{Binding IsNotCompleted}" />
                                         <Button Text="Delete"
                                                 BackgroundColor="#DC2626"
                                                 TextColor="White"
                                                 Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference PageRoot}}"
                                                 CommandParameter="{Binding .}"/>
                                     </HorizontalStackLayout>
-
-                                    <!-- Mobile: SwipeView -->
-                                    <SwipeView IsVisible="{OnPlatform WinUI=false}">
-                                        <SwipeView.LeftItems>
-                                            <SwipeItems>
-                                                <SwipeItem Text="Complete" BackgroundColor="#16A34A"
-                                                           Command="{Binding BindingContext.CompleteTaskCommand, Source={x:Reference PageRoot}}"
-                                                           CommandParameter="{Binding .}" />
-                                            </SwipeItems>
-                                        </SwipeView.LeftItems>
-
-                                        <SwipeView.RightItems>
-                                            <SwipeItems>
-                                                <SwipeItem Text="Delete" BackgroundColor="#DC2626"
-                                                           Command="{Binding BindingContext.DeleteTaskCommand, Source={x:Reference PageRoot}}"
-                                                           CommandParameter="{Binding .}" />
-                                            </SwipeItems>
-                                        </SwipeView.RightItems>
-
-                                        <Border StrokeShape="RoundRectangle 8" Padding="0" BackgroundColor="Transparent">
-                                            <!-- Empty; task info is above -->
-                                        </Border>
-                                    </SwipeView>
                                 </VerticalStackLayout>
 
                             </VerticalStackLayout>
